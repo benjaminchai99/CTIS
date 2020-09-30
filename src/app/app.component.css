@@ -4,3 +4,7 @@ main{
   margin: auto;
 }
 
+html, 
+body{
+  height: 100%;
+}

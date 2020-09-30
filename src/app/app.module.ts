@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule} from '@angular/forms';
 
-import { HeaderComponent } from './header/header.component';
 import { AppComponent } from './app.component';
 import { PostCreateComponent } from './posts/post-create/post-create.component';
 import { PostListComponent } from './posts/post-list/post-list.component';
@@ -15,6 +14,11 @@ import { MatCardModule} from '@angular/material/card';
 import { MatButtonModule} from '@angular/material/button';
 import { MatToolbarModule} from '@angular/material/toolbar';
 import { MatExpansionModule} from '@angular/material/expansion';
+import { MainNavComponent } from './main-nav/main-nav.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
 
 //configure route for router
 const appRoutes: Routes = [
@@ -26,9 +30,9 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     PostCreateComponent,
-    HeaderComponent,
     PostListComponent,
-    OptionListComponent
+    OptionListComponent,
+    MainNavComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +44,11 @@ const appRoutes: Routes = [
     MatToolbarModule,
     MatExpansionModule,
     //Add appRoutes to RouterMdodule method to configure the router
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    LayoutModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
