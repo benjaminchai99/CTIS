@@ -1,4 +1,4 @@
-<mat-toolbar color="primary">
+<mat-toolbar color="primary" style="position: relative">
   <mat-toolbar-row>
       <button mat-icon-button button (click)="expandSidebar()">
           <mat-icon>menu</mat-icon>
@@ -7,27 +7,37 @@
       <span>Covid Testing Information System</span>
 
       <div fxFlex fxLayout="row" fxLayoutAlign="flex-end">
-          <ul fxLayout="row" fxLayoutGap="20px">
+          <ul fxLayout="row" fxLayoutGap="30px">
               <li>
                   <button mat-icon-button>
                       <mat-icon>settings</mat-icon>
                   </button>
               </li>
               <li>
-                  <button mat-icon-button>
-                      <mat-icon>help_outline</mat-icon>
-                  </button>
-              </li>
-              <li>
-                  <button mat-button [matMenuTriggerFor]="menu">
+                <div>
+                    <button mat-button [matMenuTriggerFor]="menu1" >
+                        <mat-icon>help_outline</mat-icon>
+                    </button>
+                    <mat-menu #menu1="matMenu" xPosition="before">
+                        <button mat-menu-item>
+                            <mat-icon color="primary">mail_outline</mat-icon>
+                                <a href="mailto:support@kkmalaysia.com?Subject=General%20enquiries">Get support</a>
+                        </button>
+                   </mat-menu>
+                </div>
+             </li>
+             <li>
+                <div>
+                  <button mat-button [matMenuTriggerFor]="menu2">
                       <mat-icon>person_outline</mat-icon>
                   </button>
-                  <mat-menu #menu="matMenu">
+                  <mat-menu #menu2="matMenu" xPosition="before">
                       <button mat-menu-item>
-                          <mat-icon>exit_to_app</mat-icon>
+                          <mat-icon color="accent">exit_to_app</mat-icon>
                           Sign out
                       </button>
                   </mat-menu>
+                </div>
               </li>
           </ul>
       </div>
