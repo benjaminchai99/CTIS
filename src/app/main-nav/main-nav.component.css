@@ -17,12 +17,6 @@
   z-index: 1;
 }
 
-@media (min-width:1400px){
-  .sidenav {
-    display: none;
-  }
-}
-
 .navspace {
   flex: 1 1 auto;
 }
