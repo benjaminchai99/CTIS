@@ -3,10 +3,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { DefaultComponent } from './layouts/default/default.component';
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { RegisterTCComponent } from './modules/register-tc/register-tc.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [{
   path: '',
-  component: DefaultComponent,
+  component: LoginComponent,
   children: [{
     path: 'dashboard',
     component: DashboardComponent
