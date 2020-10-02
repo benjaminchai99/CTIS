@@ -3,6 +3,7 @@ import { FormControl, Validators } from '@angular/forms';
 import {ThemePalette} from '@angular/material/core';
 import { Router } from '@angular/router';
 import { LoginService } from './loginservice';
+import { DashboardComponent } from 'src/app/modules/dashboard/dashboard.component';
 
 export interface Task {
   name: string;
@@ -29,9 +30,9 @@ hide = true;
 
   ValidateUser(){
     if(this.loginservice.ValidateUser(this.username, this.password)){
-      this.router.navigate( ['src/app/layouts/default/default.component'])}
+      this.router.navigateByUrl ('/default')}
     else {
-      this.router.navigate (['./login']);
+      this.router.navigate (['/login']);
     }
   }
 }
