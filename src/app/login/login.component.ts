@@ -1,40 +1,43 @@
-import { Component } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
-import {ThemePalette} from '@angular/material/core';
-import { Router } from '@angular/router';
-import { LoginService } from './loginservice';
-import { DashboardComponent } from 'src/app/modules/dashboard/dashboard.component';
-
-export interface Task {
-  name: string;
-  completed: boolean;
-  color: ThemePalette;
-  subtasks?: Task[];
-}
+import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { AuthenticationService } from '../service/authentication/authentication.service'
+import { SignInData } from '../model/signinData';
 
 @Component({
-  selector : 'app-header',
+  selector: "login",
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
-  providers: [LoginService]
+  styleUrls: ['./login.component.scss']
 })
 
-export class LoginComponent {
+export class LoginComponent implements OnInit{
 
-constructor(private router: Router , private loginservice: LoginService){}
-
+  formCompleted = false;
+  credentialsInvalid = false;
+  
 hide = true;
+constructor(private authenticationService: AuthenticationService) {}
 
-  private username;
-  private password;
+ngOnInit(): void{
 
-  ValidateUser(){
-    if(this.loginservice.ValidateUser(this.username, this.password)){
-      this.router.navigateByUrl ('/default')}
-    else {
-      this.router.navigate (['/login']);
-    }
+}
+
+onSubmit(signInForm: NgForm){
+  if (!signInForm.valid){
+    this.formCompleted = true;
+    this.credentialsInvalid = false;
+    return;
   }
+  this.checkCredentials(signInForm);
+}
+
+private checkCredentials(signInForm: NgForm){
+  const signInData = new SignInData(signInForm.value.username,signInForm.value.password);
+  if(!this.authenticationService.authenticate(signInData)){
+    this.formCompleted = false;
+    this.credentialsInvalid = true;
+  }
+}
+
 }
 
 

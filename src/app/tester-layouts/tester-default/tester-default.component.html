@@ -1,7 +1,7 @@
-<app-tester-header></app-tester-header>
+<app-tester-header (toogleSideBarForMe)="sideBarToggler($event)"></app-tester-header>
 
 <mat-drawer-container>
-    <mat-drawer mode="side" opened>
+    <mat-drawer mode="side" [opened] = "sideBarOpen">
         <app-tester-sidebar></app-tester-sidebar>
     </mat-drawer>     
     <mat-drawer-content>

@@ -1,19 +1,20 @@
 <div fxLayoutAlign = "center center" fxFlexFill class="main-div">
-        <mat-card fxFlex="30">
-            <p>
+        <mat-card fxFlex="30" class="mat-elevation-z10">
+            <form class="form-signin" (ngSubmit)="onSubmit(signInForm)"  #signInForm="ngForm">
+               <p>
                 <mat-toolbar color = "primary">
-                  <span style = "font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Login Page</span>
+                  <span style = "font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">&emsp;Sign in</span>
                 </mat-toolbar>
               </p>
 
-                    <mat-form-field appearance="fill" fxLayoutAlign ="stretch" fxLayout ="column" class ="login-form">
-                        <mat-label>Enter Username</mat-label>
-                        <input matInput placeholder="Tommy" required>
+                    <mat-form-field appearance="fill" fxLayout ="column" class ="login-form">
+                        <mat-label><mat-icon>person</mat-icon>&emsp;Enter your username</mat-label>
+                        <input matInput placeholder="Tommy" name="username" required ngModel>
                     </mat-form-field>
                     
-                    <mat-form-field appearance="fill" fxLayoutAlign ="stretch" fxLayout ="column" class ="login-form">
-                        <mat-label>Enter your password</mat-label>
-                        <input matInput [type]="hide ? 'password' : 'text'" required>
+                    <mat-form-field appearance="fill" fxLayout ="column" class ="login-form">
+                        <mat-label><mat-icon>lock</mat-icon>&emsp;Enter your password</mat-label>
+                        <input matInput [type]="hide ? 'password' : 'text'" name="password" required ngModel>
                         <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                         <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                         </button>
@@ -21,12 +22,30 @@
 
                     <div>
                         <section class="example-section" class = "login-form">
-                            <mat-checkbox color = "warn" class="example-margin">Remember Me</mat-checkbox>
-                            <span class="psw" style ="float:right;"> <a href="#">Forgot password?</a></span>
+                            <mat-checkbox color = "primary" class="example-margin">Remember Me</mat-checkbox>
+                            <span class="psw" style ="float:right;"> <a href="#">Forgot username or password?</a></span>
                         </section>
                     </div>
 
-            <button style = "float : right; padding-bottom: 10px;" mat-button color="primary" (click) = 'ValidateUser()'>Log In</button>
-            <button style = "float : right;" mat-button color="warn">Cancel</button>
+                <button type="submit" style = "font-size: 15px; float : right; padding: 15px 30px 15px 30px;" mat-button color="primary">Log In</button>
+                <button style = "font-size: 15px; float : right; padding:  15px 30px 15px 30px;" mat-button color="warn">Cancel</button>
+
+                <div>
+                    <section class="example-section" class = "login-form">
+                        <mat-error *ngIf="formCompleted">
+                            Please fill all fields.
+                        </mat-error>
+                    </section>
+                </div>
+
+                <div>
+                    <section class="example-section" class = "login-form">
+                        <mat-error *ngIf="credentialsInvalid">
+                            Invalid username or password!
+                        </mat-error>
+                    </section>
+                </div>
+
+            </form>
         </mat-card>
     </div>

@@ -17,12 +17,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule} from '@angular/material/toolbar';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { TesterDefaultModule } from './tester-layouts/tester-default/tester-default.module';
-
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +39,8 @@ import { TesterDefaultModule } from './tester-layouts/tester-default/tester-defa
     FlexLayoutModule,
     MatToolbarModule,
     MatCheckboxModule,
-    TesterDefaultModule
+    TesterDefaultModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
