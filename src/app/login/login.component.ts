@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit{
 
   formCompleted = false;
   credentialsInvalid = false;
-  
+
 hide = true;
 constructor(private authenticationService: AuthenticationService) {}
 
@@ -28,6 +28,7 @@ onSubmit(signInForm: NgForm){
     return;
   }
   this.checkCredentials(signInForm);
+  signInForm.resetForm();
 }
 
 private checkCredentials(signInForm: NgForm){
@@ -39,5 +40,3 @@ private checkCredentials(signInForm: NgForm){
 }
 
 }
-
-

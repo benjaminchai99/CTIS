@@ -9,6 +9,25 @@ import { AuthGuard } from './guards/auth.guard';
 import { TesterDefaultComponent } from './tester-layouts/tester-default/tester-default.component';
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
 
+
+const routes: Routes = [{
+  path: '',
+  component: LoginComponent},
+  {path: 'manager-component',
+  component: DefaultComponent,
+  children: [{
+    path: '',
+    component: DashboardComponent
+  }, {
+    path: 'manager-dashboard',
+    component: DashboardComponent
+  }, {
+    path: 'register-Test-Centre',
+    component: RegisterTCComponent
+  }]
+}];
+
+/*
 const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'manager-dashboard', component: DefaultComponent,canActivate: [AuthGuard],
@@ -27,9 +46,10 @@ const routes: Routes = [
     {
     path: 'record-new-test', component: RecordNtComponent
   }]},];
+*/
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)], 
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
