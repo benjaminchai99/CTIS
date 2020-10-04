@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { AuthenticationService } from 'src/app/service/authentication/authentication.service';
 
 @Component({
   selector: 'app-tester-header',
@@ -8,12 +9,18 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 export class TesterHeaderComponent implements OnInit {
 
   @Output() toogleSideBarForMe: EventEmitter<any> = new EventEmitter()
-  constructor() { }
 
   ngOnInit() {} 
 
   toggleSideBar() {
     this.toogleSideBarForMe.emit();
   }
+
+  constructor(public authenticationService: AuthenticationService){
+  }
+
+logout(){
+  this.authenticationService.logout();
+}
 
 }

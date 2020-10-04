@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from 'src/app/service/authentication/authentication.service';
 
 @Component({
   selector: 'app-tester-default',
@@ -9,7 +10,8 @@ export class TesterDefaultComponent implements OnInit {
 
   sideBarOpen = true;
 
-  constructor() { }
+  constructor(public authenticationService: AuthenticationService){
+  }
 
   ngOnInit(): void {}
 

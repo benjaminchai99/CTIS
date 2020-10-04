@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { AuthenticationService } from 'src/app/service/authentication/authentication.service';
 
 @Component({
   selector: 'app-record-nt',
@@ -8,7 +9,8 @@ import { NgForm } from '@angular/forms';
 })
 export class RecordNtComponent implements OnInit {
 
-  constructor() { }
+  constructor(public authenticationService: AuthenticationService){
+  }
 
   ngOnInit(): void {
   }

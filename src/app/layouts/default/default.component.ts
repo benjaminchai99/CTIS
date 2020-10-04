@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from 'src/app/service/authentication/authentication.service';
 
 @Component({
   selector: 'app-default',
@@ -9,7 +10,8 @@ export class DefaultComponent implements OnInit {
 
   sideBarState = true;
 
-  constructor() { }
+  constructor(public authenticationService: AuthenticationService){
+  }
 
   ngOnInit(): void {
   }

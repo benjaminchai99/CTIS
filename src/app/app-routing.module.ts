@@ -8,6 +8,7 @@ import { RecordNtComponent } from './tester-modules/record-nt/record-nt.componen
 import { AuthGuard } from './guards/auth.guard';
 import { TesterDefaultComponent } from './tester-layouts/tester-default/tester-default.component';
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
+import { UpdateTestComponent } from './tester-modules/update-test/update-test.component';
 
 
 const routes: Routes = [{
@@ -25,28 +26,23 @@ const routes: Routes = [{
     path: 'register-Test-Centre',
     component: RegisterTCComponent
   }]
+},
+{path: 'tester-component',
+  component: TesterDefaultComponent,
+  children: [{
+    path: '',
+    component: TesterDashboardComponent
+  }, {
+    path: 'tester-dashboard',
+    component: DashboardComponent
+  }, {
+    path: 'record-new-test',
+    component: RecordNtComponent
+  }, {
+    path: 'update-test',
+    component: UpdateTestComponent
+  }]
 }];
-
-/*
-const routes: Routes = [
-  { path: '', component: LoginComponent },
-  { path: 'manager-dashboard', component: DefaultComponent,canActivate: [AuthGuard],
-
-  children: [{
-    path: 'manager-dashboard',
-    component: DashboardComponent},
-    {
-    path: 'register-Test-Centre',
-    component: RegisterTCComponent
-  }]},
-  {path: 'tester-dashboard', component: TesterDefaultComponent, canActivate: [AuthGuard],
-
-  children: [{
-    path: 'tester-dashboard', component: TesterDashboardComponent},
-    {
-    path: 'record-new-test', component: RecordNtComponent
-  }]},];
-*/
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
