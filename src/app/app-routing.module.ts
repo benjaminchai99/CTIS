@@ -15,32 +15,32 @@ const routes: Routes = [{
   path: '',
   component: LoginComponent},
   {path: 'manager-component',
-  component: DefaultComponent,
+  component: DefaultComponent, canActivate: [AuthGuard],
   children: [{
     path: '',
-    component: DashboardComponent
+    component: DashboardComponent, canActivate: [AuthGuard]
   }, {
     path: 'manager-dashboard',
-    component: DashboardComponent
+    component: DashboardComponent, canActivate: [AuthGuard]
   }, {
     path: 'register-Test-Centre',
-    component: RegisterTCComponent
-  }]
+    component: RegisterTCComponent, canActivate: [AuthGuard]
+  }],
 },
 {path: 'tester-component',
-  component: TesterDefaultComponent,
+  component: TesterDefaultComponent, canActivate: [AuthGuard],
   children: [{
     path: '',
-    component: TesterDashboardComponent
+    component: TesterDashboardComponent,canActivate: [AuthGuard]
   }, {
     path: 'tester-dashboard',
-    component: DashboardComponent
+    component: DashboardComponent, canActivate: [AuthGuard]
   }, {
     path: 'record-new-test',
-    component: RecordNtComponent
+    component: RecordNtComponent, canActivate: [AuthGuard]
   }, {
     path: 'update-test',
-    component: UpdateTestComponent
+    component: UpdateTestComponent, canActivate: [AuthGuard]
   }]
 }];
 
