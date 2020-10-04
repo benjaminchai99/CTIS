@@ -11,6 +11,7 @@ import { SignInData } from '../model/signinData';
 
 export class LoginComponent implements OnInit{
 
+  myimage: string = "src/app/login/image.jpg";
   formCompleted = false;
   credentialsInvalid = false;
 

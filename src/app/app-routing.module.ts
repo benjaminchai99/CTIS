@@ -9,6 +9,8 @@ import { AuthGuard } from './guards/auth.guard';
 import { TesterDefaultComponent } from './tester-layouts/tester-default/tester-default.component';
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { UpdateTestComponent } from './tester-modules/update-test/update-test.component';
+import { RegisterTcoComponent } from './modules/register-tco/register-tco.component';
+import { ManageTksComponent } from './modules/manage-tks/manage-tks.component';
 
 
 const routes: Routes = [{
@@ -25,6 +27,12 @@ const routes: Routes = [{
   }, {
     path: 'register-Test-Centre',
     component: RegisterTCComponent, canActivate: [AuthGuard]
+  }, {
+    path: 'record-Tester',
+    component: RegisterTcoComponent, canActivate: [AuthGuard]
+  }, {
+    path: 'manage-Test-Kit-Stock',
+    component: ManageTksComponent, canActivate: [AuthGuard]
   }],
 },
 {path: 'tester-component',

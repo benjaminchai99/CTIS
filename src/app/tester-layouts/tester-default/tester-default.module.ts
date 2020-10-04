@@ -32,7 +32,6 @@ import { UpdateTestComponent } from 'src/app/tester-modules/update-test/update-t
     FlexLayoutModule,
     MatRadioModule,
     MatIconModule
-    
   ]
 })
 export class TesterDefaultModule {}

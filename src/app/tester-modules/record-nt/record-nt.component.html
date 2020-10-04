@@ -6,7 +6,8 @@
 
 </head>
 <body>
-<mat-card >
+<div fxLayoutAlign = "center center">
+<mat-card>
 <div class="container">
   
   <div class="card">
@@ -43,7 +44,6 @@
           
 
           <div class="text-input-group">
-            <mat-form-field>
             <mat-label for="password">Password</mat-label>
             <input mat-input
               name="password" 
@@ -52,10 +52,10 @@
               autocomplete="off"
               required="required"
             >
-            </mat-form-field>
           </div>
-
         </div>
+
+        <hr>
 
         <mat-label id="example-radio-group-label">Patient Type</mat-label>
         <mat-radio-group
@@ -66,31 +66,32 @@
             {{patient}}
           </mat-radio-button>
         </mat-radio-group>
-        
 
+        <hr>
+        
         <div class="checkbox-set">
           <legend>Patient's Symptoms</legend>
           <div class="radios radios-checkbox">
 
             <div class="radio-wrapper">
-              <input type="checkbox" name="favToppings" id="cheese">
-              <label for="cheese"><span>Flu</span></label>
+              <input type="checkbox" name="patientSymptoms" id="flu">
+              <label for="flu"><span>Flu</span></label>
             </div>
             <div class="radio-wrapper">
-              <input type="checkbox" name="favToppings" id="pepperoni">
-              <label for="pepperoni"><span>Cough</span></label>
+              <input type="checkbox" name="patientSymptoms" id="cough">
+              <label for="cough"><span>Cough</span></label>
             </div>
             <div class="radio-wrapper">
-              <input type="checkbox" name="favToppings" id="pineapple">
-              <label for="pineapple"><span>Fever</span></label>
+              <input type="checkbox" name="patientSymptoms" id="fever">
+              <label for="fever"><span>Fever</span></label>
             </div>
             <div class="radio-wrapper">
-              <input type="checkbox" name="favToppings" id="sausage">
-              <label for="sausage"><span>Sore Throat</span></label>
+              <input type="checkbox" name="patientSymptoms" id="soreThroat">
+              <label for="soreThroat"><span>Sore Throat</span></label>
             </div>
             <div class="radio-wrapper">
-              <input type="checkbox" name="favToppings" id="moreCheese">
-              <label for="moreCheese"><span>Diarrhea</span></label>
+              <input type="checkbox" name="patientSymptoms" id="diarrhea">
+              <label for="diarrhea"><span>Diarrhea</span></label>
             </div>
 
           </div>
@@ -101,18 +102,17 @@
             <mat-label>Other Symptoms</mat-label>
             <input matInput placeholder="Ex. Dizzy">
           </mat-form-field>
-
-
-      </form>
-
+        </form>
     </div>
 
     <div class="card__footer">
-      <button class = "button1"><span>Submit Form</span></button>
+      <button class = "button1"><span>Submit</span></button>
       <button class="tertiary"><span>Cancel</span></button>
     </div>
   </div>
 </div>
+
 </mat-card>  
+</div> 
 </body>
 </html>
