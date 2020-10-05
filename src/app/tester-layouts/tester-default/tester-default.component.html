@@ -1,4 +1,4 @@
-<app-tester-header (toogleSideBarForMe)="sideBarToggler($event)"></app-tester-header>
+<app-tester-header (toogleSideBarForMe)="sideBarToggler($event)" [deviceXs]="deviceXs"></app-tester-header>
 
 <mat-drawer-container>
     <mat-drawer mode="side" [opened] = "sideBarOpen">

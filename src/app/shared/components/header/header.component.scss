@@ -1,5 +1,11 @@
-ul li{
-  list-style: none;
+.sticky {
+  padding: 0px;
+  width: 100%;
+  top: 0px;
+  z-index: 10;
 }
 
-
+.logo {
+  padding: 0px 5px;
+  font-size: 20px;
+}

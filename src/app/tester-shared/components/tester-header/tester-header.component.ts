@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Output, Input } from '@angular/core';
 import { AuthenticationService } from 'src/app/service/authentication/authentication.service';
 
 @Component({
@@ -6,14 +6,16 @@ import { AuthenticationService } from 'src/app/service/authentication/authentica
   templateUrl: './tester-header.component.html',
   styleUrls: ['./tester-header.component.scss']
 })
-export class TesterHeaderComponent implements OnInit {
+export class TesterHeaderComponent{
 
-  @Output() toogleSideBarForMe: EventEmitter<any> = new EventEmitter()
+  @Input() deviceXs: boolean; 
+  @Output() toggleSideBarForMe: EventEmitter<any> = new EventEmitter();
 
-  ngOnInit() {} 
+  ngOnInit(): void {
+  }
 
-  toggleSideBar() {
-    this.toogleSideBarForMe.emit();
+  toggleSideBar(){
+    this.toggleSideBarForMe.emit();
   }
 
   constructor(public authenticationService: AuthenticationService){
@@ -22,5 +24,4 @@ export class TesterHeaderComponent implements OnInit {
 logout(){
   this.authenticationService.logout();
 }
-
 }

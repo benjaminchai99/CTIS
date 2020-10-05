@@ -1,59 +1,61 @@
 <div class="container">
-    <table class="neumorphic">
-  <thead>
-    <tr>
-      <th>Test ID</th>
-      <th>Patient Name</th>
-      <th>Patient Type</th>
-      <th>Symptoms</th>
-      <th>Test Date (dd/MM/yyyy)</th>
-      <th>Status</th>
-      <th>Result Date (dd/MM/yyyy)</th>
-      <th>Test Result</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>T001</td>
-      <td>John Smith</td>
-      <td>Returnee</td>
-      <td>Flu, Cough</td>
-      <td>10-08-2020</td>
-      <td>Pending</td>
-      <td>Pending</td>
-      <td>Pending</td>
-    </tr>
-    <tr>
-      <td>T002</td>
-      <td>Mike Jones</td>
-      <td>Quarantined</td>
-      <td>None</td>
-      <td>15-08-2020</td>
-      <td>Completed</td>
-      <td>20-08-2020</td>
-      <td>Negative</td>
-    </tr>
-    <tr>
-      <td>T003</td>
-      <td>Cell 2</td>
-      <td>Cell 3</td>
-      <td>Cell 4</td>
-      <td>Cell 5</td>
-    </tr>
-    <tr>
-      <td>T004</td>
-      <td>Cell 2</td>
-      <td>Cell 3</td>
-      <td>Cell 4</td>
-      <td>Cell 5</td>
-    </tr>
-     <tr>
-      <td>T005</td>
-      <td>Cell 2</td>
-      <td>Cell 3</td>
-      <td>Cell 4</td>
-      <td>Cell 5</td>
-    </tr>
-  </tbody>
-    </table>
-  </div>
+  <table class="neumorphic" *ngFor="let patient of patients">
+<thead>
+  <tr>
+    <th>Test ID</th>
+    <th>First Name</th>
+    <th>Last  Name</th>
+    <th>Patient Type</th>
+    <th>Symptoms</th>
+    <th>Test Date (dd/MM/yyyy)</th>
+    <th>Status</th>
+    <th>Result Date (dd/MM/yyyy)</th>
+    <th>Test Result</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>T001</td>
+    <td>{{patient.firstName}}</td>
+    <td>{{patient.lastName}}</td>
+    <td>{{patient.patientType}}</td>
+    <td>{{patient.symptoms}}</td>
+    <td>10-08-2020</td>
+    <td>Pending</td>
+    <td>Pending</td>
+    <td>Pending</td>
+  </tr>
+  <tr>
+    <td>T002</td>
+    <td>Mike Jones</td>
+    <td>Quarantined</td>
+    <td>None</td>
+    <td>15-08-2020</td>
+    <td>Completed</td>
+    <td>20-08-2020</td>
+    <td>Negative</td>
+  </tr>
+  <tr>
+    <td>T003</td>
+    <td>Cell 2</td>
+    <td>Cell 3</td>
+    <td>Cell 4</td>
+    <td>Cell 5</td>
+  </tr>
+  <tr>
+    <td>T004</td>
+    <td>Cell 2</td>
+    <td>Cell 3</td>
+    <td>Cell 4</td>
+    <td>Cell 5</td>
+  </tr>
+   <tr>
+    <td>T005</td>
+    <td>Cell 2</td>
+    <td>Cell 3</td>
+    <td>Cell 4</td>
+    <td>Cell 5</td>
+  </tr>
+</tbody>
+  </table>
+</div>

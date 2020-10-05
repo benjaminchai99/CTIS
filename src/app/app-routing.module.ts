@@ -42,7 +42,7 @@ const routes: Routes = [{
     component: TesterDashboardComponent,canActivate: [AuthGuard]
   }, {
     path: 'tester-dashboard',
-    component: DashboardComponent, canActivate: [AuthGuard]
+    component: TesterDashboardComponent, canActivate: [AuthGuard]
   }, {
     path: 'record-new-test',
     component: RecordNtComponent, canActivate: [AuthGuard]

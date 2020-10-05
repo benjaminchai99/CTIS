@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Output, Input } from '@angular/core';
 import { AuthenticationService } from 'src/app/service/authentication/authentication.service';
 
 @Component({
@@ -6,9 +6,10 @@ import { AuthenticationService } from 'src/app/service/authentication/authentica
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent{
 
-  @Output() expandSidebarNow: EventEmitter<any> = new EventEmitter()
+  @Input() deviceXs: boolean; 
+  @Output() expandSidebarNow: EventEmitter<any> = new EventEmitter();
 
   ngOnInit(): void {
   }
@@ -24,3 +25,4 @@ logout(){
   this.authenticationService.logout();
 }
 }
+
