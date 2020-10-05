@@ -1,0 +1,15 @@
+<div class="centered">
+<mat-accordion multi="true" *ngIf="testCentres.length>0">
+<mat-expansion-panel *ngFor="let testCentre of testCentres">
+<mat-expansion-panel-header>
+  {{testCentre.testCentreName}}
+</mat-expansion-panel-header>
+<p>Status:  Registered</p>
+
+<mat-action-row>
+  <button mat-button color="warn" (click)="remove()">REMOVE</button>
+</mat-action-row>
+</mat-expansion-panel>
+</mat-accordion>
+<p class="info-text mat-body-1" *ngIf="testCentres.length == 0">No test centre registered yet.</p>
+</div>

@@ -11,6 +11,8 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
 import { RegisterTcoComponent } from 'src/app/modules/register-tco/register-tco.component';
 import { ManageTksComponent } from 'src/app/modules/manage-tks/manage-tks.component';
+import { RegisterTCModule } from 'src/app/modules/register-tc/register-tc.module';
+import { RegisterTcoModule } from 'src/app/modules/register-tco/register-tco.module';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { ManageTksComponent } from 'src/app/modules/manage-tks/manage-tks.compon
     MatSidenavModule,
     MatFormFieldModule,
     MatRadioModule,
-    MatCardModule
+    MatCardModule,
+    RegisterTCModule,
+    RegisterTcoModule
   ]
 })
 export class DefaultModule { }

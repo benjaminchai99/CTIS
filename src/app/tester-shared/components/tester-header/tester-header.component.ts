@@ -8,20 +8,20 @@ import { AuthenticationService } from 'src/app/service/authentication/authentica
 })
 export class TesterHeaderComponent{
 
-  @Input() deviceXs: boolean; 
   @Output() toggleSideBarForMe: EventEmitter<any> = new EventEmitter();
+  @Input() deviceXs: boolean; 
 
-  ngOnInit(): void {
+  constructor(public authenticationService: AuthenticationService){
   }
+
+  ngOnInit(): void {}
 
   toggleSideBar(){
     this.toggleSideBarForMe.emit();
   }
 
-  constructor(public authenticationService: AuthenticationService){
-  }
-
 logout(){
   this.authenticationService.logout();
 }
+
 }
