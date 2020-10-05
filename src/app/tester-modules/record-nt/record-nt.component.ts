@@ -21,4 +21,5 @@ export class RecordNtComponent implements OnInit {
   hide = true;
 
   value = 'Clear me';
+
 }

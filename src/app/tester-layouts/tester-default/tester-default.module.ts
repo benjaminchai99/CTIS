@@ -13,6 +13,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatIconModule } from '@angular/material/icon';
 import { UpdateTestComponent } from 'src/app/tester-modules/update-test/update-test.component';
+import { RecordNTModule } from 'src/app/tester-modules/record-nt/record-nt.module';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { UpdateTestComponent } from 'src/app/tester-modules/update-test/update-t
     MatFormFieldModule,
     FlexLayoutModule,
     MatRadioModule,
-    MatIconModule
+    MatIconModule,
+    RecordNTModule
   ]
 })
 export class TesterDefaultModule {}
