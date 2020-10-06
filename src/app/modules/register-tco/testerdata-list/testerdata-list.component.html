@@ -1,0 +1,19 @@
+<div class="centered">
+<mat-accordion multi="true" *ngIf="testers.length>0">
+    <mat-expansion-panel *ngFor="let tester of testers">
+    <mat-expansion-panel-header [ngStyle]="{'font-size':'20px'}">
+      {{tester.fullname}}
+    </mat-expansion-panel-header>
+    <p>Officer ID:    {{tester.officerID}}</p>
+    <p>Username:    {{tester.username}}</p>
+    <p>Password:    {{tester.password}}</p>
+    <p>Position:    Tester</p>
+
+    <mat-action-row>
+      <button mat-button color="primary">EDIT</button>
+      <button mat-button color="warn" (click)="remove()">REMOVE</button>
+    </mat-action-row>
+    </mat-expansion-panel>
+</mat-accordion>
+<p class="info-text mat-body-1" style="padding-top: 20px; font-size:15px;" *ngIf="testers.length == 0">No officers recorded yet.</p>
+</div>

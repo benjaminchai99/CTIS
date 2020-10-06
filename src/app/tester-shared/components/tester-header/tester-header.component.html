@@ -1,0 +1,54 @@
+<mat-toolbar color="primary" class="sticky">
+    <mat-toolbar-row fxLayoutAlign="space-between center">
+       <div fxLayout="row">
+           <button mat-icon-button (click) = "toggleSideBar()">
+           <mat-icon>menu</mat-icon>
+         </button>
+         <div fxLayout="row">
+           <button *ngIf="!deviceXs" mat-button>
+               <span class="logo">Covid Testing Information System</span>
+             </button>
+           <button *ngIf="deviceXs" mat-button>
+               <span class="logo">CTIS</span>
+             </button>
+         </div>
+       </div>
+       <div fxLayout="row"  fxLayoutGap="20px">
+           <button *ngIf="deviceXs" mat-icon-button [matMenuTriggerFor]="menu1">
+             <mat-icon>help_outline</mat-icon>
+           </button>
+           <button *ngIf="deviceXs" mat-icon-button [matMenuTriggerFor]="menu2">
+           <mat-icon>person</mat-icon>
+           </button>
+           <button
+             *ngIf="!deviceXs"
+             mat-button
+             [matMenuTriggerFor]="menu1"
+             fxLayoutAlign="end" style="font-size:20px;"
+           >
+             Help
+           </button>
+           <button
+           *ngIf="!deviceXs"
+           mat-button
+           [matMenuTriggerFor]="menu2"
+           fxLayoutAlign="end" style="font-size:20px; padding-left: 40px; padding-right: 25px;"
+         >
+           Profile
+         </button>
+         </div>
+     </mat-toolbar-row>
+   </mat-toolbar>
+     
+     <mat-menu #menu1="matMenu" fxLayoutAlign="end" xPosition="before">
+       <button mat-menu-item>
+           <mat-icon color="primary">mail_outline</mat-icon>
+               <a href="mailto:support@kkmalaysia.com?Subject=General%20enquiries">Get support</a>
+       </button>
+    </mat-menu>
+    <mat-menu #menu2="matMenu" fxLayoutAlign="end" xPosition="before">
+       <button mat-menu-item (click)="logout()">
+         <mat-icon color="accent">exit_to_app</mat-icon>
+         Sign out
+       </button>
+     </mat-menu>

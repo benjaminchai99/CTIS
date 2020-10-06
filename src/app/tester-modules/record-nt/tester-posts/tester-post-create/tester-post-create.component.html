@@ -1,0 +1,90 @@
+<h2 [ngStyle] ="{'text-align': 'center'}"> Record New Test</h2>
+<mat-card>
+  <form (submit) = "onAddPost(postForm)" #postForm="ngForm">
+    <mat-form-field>
+      <input
+      matInput
+      type="text"
+      name="username"
+      ngModel
+      placeholder="Patient's Username"
+      required
+      minlength="7"
+      #username="ngModel">
+      <mat-error *ngIf= "username.invalid"> Please enter a username for patient</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+      matInput
+      type="text"
+      name="password"
+      ngModel
+      placeholder="Password"
+      required
+      minlength="8"
+      #password="ngModel">
+      <mat-error *ngIf= "password.invalid"> Please create a password for patient. Min 8 characters</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+    <input
+    matInput
+    type="text"
+    name="firstName"
+    ngModel
+    placeholder="First Name"
+    required
+    minlength="2"
+    #firstName="ngModel">
+    <mat-error *ngIf= "firstName.invalid"> Please enter patient's first name</mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input
+    matInput
+    type ="text"
+    name  = "lastName"
+    ngModel
+    placeholder="Last Name"
+    required
+    minlength="2"
+    #lastName="ngModel">
+    <mat-error *ngIf= "lastName.invalid">Please enter patient's last name</mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input
+    matInput
+    type ="text"
+    name  = "patientType"
+    ngModel
+    placeholder="Eg: Quarantined, Returnee, Close Contact, Infected, Suspected"
+    required
+    minlength="7"
+    #patientType="ngModel">
+    <mat-error *ngIf= "patientType.invalid">Please enter at least one type</mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <textarea
+    matInput
+    rows ="2"
+    type ="text"
+    name  = "symptoms"
+    ngModel
+    placeholder="Eg: Flu, Cough, Fever, Sore Throat or None"
+    required
+    #symptoms="ngModel">
+    </textarea>
+    <mat-error *ngIf= "symptoms.invalid">Please enter patient's symptom</mat-error>
+  </mat-form-field>
+    <hr>
+
+    <button
+      mat-raised-button
+      color = "accent"
+      type="submit">Save Post</button>
+
+  </form>
+</mat-card>

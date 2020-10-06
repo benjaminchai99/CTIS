@@ -1,0 +1,10 @@
+main{
+  margin-top: 2rem;
+  width: 50%;
+  margin: auto;
+}
+
+html, 
+body{
+  height: 100%;
+}
