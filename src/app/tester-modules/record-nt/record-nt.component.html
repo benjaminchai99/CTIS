@@ -1,0 +1,121 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Record New Test</title>
+
+</head>
+<body>
+<div fxLayoutAlign = "center center">
+<mat-card>
+<div class="container">
+  
+  <div class="card">
+
+    <div class="card__content">
+      <h3 class="card__title">Record New Test</h3>
+      <form>
+
+        <div class="input-fields">
+          <div class="text-input-group">
+            <mat-label for="firstName">First Name</mat-label>
+            <input 
+              type="text" 
+              name="firstName" 
+              id="firstName" 
+              placeholder="John" 
+              autocomplete="off"
+              required="required"
+            >
+          </div>
+
+          
+          <div class="text-input-group">
+            <mat-label for="lastName">Last Name</mat-label>
+            <input 
+              type="text" 
+              name="lastName" 
+              id="lastName" 
+              placeholder="Doe" 
+              autocomplete="off"
+              required="required"
+            >
+          </div>
+          
+
+          <div class="text-input-group">
+            <mat-label for="password">Password</mat-label>
+            <input mat-input
+              name="password" 
+              id="password" 
+              placeholder="Min. 8 characters" 
+              autocomplete="off"
+              required="required"
+            >
+          </div>
+        </div>
+
+        <hr>
+
+        <mat-label id="example-radio-group-label">Patient Type</mat-label>
+        <mat-radio-group
+          aria-labelledby="example-radio-group-label"
+          class="example-radio-group"
+          ([ngModel])="patientType">
+          <mat-radio-button class="example-radio-button" *ngFor="let patient of patient" [value]="patient">
+            {{patient}}
+          </mat-radio-button>
+        </mat-radio-group>
+
+        <hr>
+        
+        <div class="checkbox-set">
+          <legend>Patient's Symptoms</legend>
+          <div class="radios radios-checkbox">
+
+            <div class="radio-wrapper">
+              <input type="checkbox" name="patientSymptoms" id="flu">
+              <label for="flu"><span>Flu</span></label>
+            </div>
+            <div class="radio-wrapper">
+              <input type="checkbox" name="patientSymptoms" id="cough">
+              <label for="cough"><span>Cough</span></label>
+            </div>
+            <div class="radio-wrapper">
+              <input type="checkbox" name="patientSymptoms" id="fever">
+              <label for="fever"><span>Fever</span></label>
+            </div>
+            <div class="radio-wrapper">
+              <input type="checkbox" name="patientSymptoms" id="soreThroat">
+              <label for="soreThroat"><span>Sore Throat</span></label>
+            </div>
+            <div class="radio-wrapper">
+              <input type="checkbox" name="patientSymptoms" id="diarrhea">
+              <label for="diarrhea"><span>Diarrhea</span></label>
+            </div>
+
+          </div>
+        </div>
+
+        
+          <mat-form-field class="example-full-width">
+            <mat-label>Other Symptoms</mat-label>
+            <input matInput placeholder="Ex. Dizzy">
+          </mat-form-field>
+        </form>
+    </div>
+
+    <div class="card__footer">
+      <button class = "button1"><span>Submit</span></button>
+      <button class="tertiary"><span>Cancel</span></button>
+    </div>
+  </div>
+</div>
+
+</mat-card>  
+</div> 
+</body>
+</html>
+
+-->
+<h2 [ngStyle]="{'font-size':'30px','text-align':'center'}"> Test Reports</h2>
+<app-tester-post-create></app-tester-post-create>

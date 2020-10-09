@@ -1,0 +1,51 @@
+<h1 [ngStyle]="{'font-size':'30px','text-align':'center'}">Manage Test Kit Stock</h1>
+<mat-divider></mat-divider>
+<br><br>
+<div class="mat-card-cvr">
+<mat-card class="mat-elevation-z10">
+  <form (submit)="onAddTestKit(testKitForm)" #testKitForm="ngForm">
+  <mat-form-field class ="mff" [ngStyle]="{'font-size':'17px','padding-bottom':'5px'}">
+    <mat-label><mat-icon>build</mat-icon>&emsp;Test Kit Name</mat-label>
+    <input [ngStyle]="{'font-size':'20px','text-align':'center'}"
+      matInput
+      type="text"
+      name="testKitName"
+      ngModel
+      id="testKitName"
+      required
+      minlength="3"
+      #testKitName="ngModel"
+      placeholder="e.g. IgM/IgG Duo">
+      <mat-error *ngIf="testKitName.invalid">Test Kit Name has to be at least 3 letters</mat-error>
+  </mat-form-field>
+
+  <mat-form-field [ngStyle]="{'font-size':'17px','padding-bottom':'5px'}">
+    <mat-label><mat-icon>move_to_inbox</mat-icon>&emsp;Stock</mat-label>
+    <input [ngStyle]="{'font-size':'20px','text-align':'center'}"
+      matInput 
+      type="number"
+      name="stock"
+      ngModel
+      id="stock"
+      pattern="^$|^([0-9]|[1-9][0-9]|[1][0][0])?"
+      required
+      #stock="ngModel"
+      placeholder="e.g. 1">
+      <mat-error *ngIf="stock.invalid">Stock has to be at least 1 numeric value</mat-error>
+  </mat-form-field>
+
+
+  <button
+  *ngIf="!editState"
+    mat-raised-button
+    color = "accent"
+    type="submit">Save</button>
+    <button
+    *ngIf="editState"
+      mat-raised-button
+      color = "Warn"
+      type="submit">Update</button>
+  </form>
+</mat-card>
+</div>
+

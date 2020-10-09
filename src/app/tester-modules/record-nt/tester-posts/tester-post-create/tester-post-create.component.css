@@ -1,0 +1,14 @@
+mat-form-field,
+  textarea{
+    width:100%;
+  }
+
+  .mat-card{
+    margin: 0 auto;
+    width: 60%;
+    text-align:center;
+  }
+
+  mat-form-field{
+    margin-right: 12px;
+  }

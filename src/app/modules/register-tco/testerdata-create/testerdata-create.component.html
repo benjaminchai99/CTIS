@@ -1,0 +1,59 @@
+<h1 [ngStyle]="{'font-size':'30px','text-align':'center'}">Record Tester Centre Officer</h1>
+<mat-divider></mat-divider>
+<br><br>
+<div class="mat-card-cvr">
+<mat-card class="mat-elevation-z10">
+  <form (submit)="onAddTester(testerForm)" #testerForm="ngForm">
+  <mat-form-field [ngStyle]="{'font-size':'17px','padding-bottom':'5px'}">
+    <mat-label><mat-icon>person</mat-icon>&emsp;Username</mat-label>
+    <input [ngStyle]="{'font-size':'20px','text-align':'center'}"
+      matInput
+      type="text"
+      name="username"
+      ngModel
+      required
+      minlength="3"
+      #username="ngModel"
+      placeholder="e.g. Tommy">
+      <mat-error *ngIf="username.invalid">Username has to be at least 3 letters</mat-error>
+  </mat-form-field>
+
+  <mat-form-field [ngStyle]="{'font-size':'17px','padding-bottom':'5px'}">
+    <mat-label><mat-icon>lock</mat-icon>&emsp;Password</mat-label>
+    <input [ngStyle]="{'font-size':'20px','text-align':'center'}"
+      matInput
+      [type]="hide ? 'password' : 'text'" 
+      name="password"
+      ngModel
+      required
+      minlength="5"
+      #password="ngModel"
+      placeholder="e.g. *****">
+      <button mat-icon-button style="font-size: 20px;" matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+      <mat-error *ngIf="password.invalid">(min. 5 alphanumeric letters)</mat-error>
+  </mat-form-field>
+
+  <mat-form-field [ngStyle]="{'font-size':'17px','padding-bottom':'5px'}">
+    <mat-label><mat-icon>account_box</mat-icon>&emsp;Full name</mat-label>
+    <input [ngStyle]="{'font-size':'20px','text-align':'center'}"
+      matInput 
+      type="text"
+      name="fullname"
+      ngModel
+      required
+      minlength="5"
+      #fullname="ngModel"
+      placeholder="e.g. Tommy Hilfiger">
+      <mat-error *ngIf="fullname.invalid">Full name has to be at least 5 letters</mat-error>
+  </mat-form-field>
+
+  <button
+    mat-raised-button
+    color = "accent"
+    type="submit">Save</button>
+  </form>
+</mat-card>
+</div>
+

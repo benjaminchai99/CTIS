@@ -1,0 +1,48 @@
+$desktop: 960px;
+$tablet: 768px;
+$mobile-large: 640px;
+$mobile: 480px;
+$mobile-small: 300px;
+
+
+mat-form-field,
+appearance {
+  width: 100%;
+}
+@media only screen and (max-width : 640px){
+  mat-form-field, appearance {
+    float: none;
+    width: 100%
+  };
+}
+
+.main-div mat-card {
+  padding : 0px;
+  
+}
+
+@media only screen and (max-width : 640px){
+  .main-div mat-card {
+    min-width:21rem;
+  }
+}
+
+@media only screen and (max-width : 1366px){
+  .main-div mat-card {
+    width: 90%;
+}}
+
+.login-form {
+  padding: 20px;
+}
+
+.main-div {
+  background-image: url(./bg_image.png);
+}
+
+@media only screen and (max-width : 640px){
+  .main-div {
+    background-image: url(./image1.png);
+  }
+}
+

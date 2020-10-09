@@ -1,0 +1,19 @@
+<div class="centered">
+    <mat-accordion multi="true" *ngIf="testKits.length>0">
+        <mat-expansion-panel *ngFor="let testKit of testKits">
+        <mat-expansion-panel-header [ngStyle]="{'font-size':'20px'}">
+          {{testKit.testKitName}}
+        </mat-expansion-panel-header>
+        <p>Test Kit ID:    {{testKit.testKitID}}</p>
+        <p>Stock:    {{testKit.stock}}</p>
+    
+        <mat-action-row>
+          <button mat-button color="primary">EDIT</button>
+          <button mat-button color="warn">DELETE</button>
+        </mat-action-row>
+        </mat-expansion-panel>
+    </mat-accordion>
+    <p class="info-text mat-body-1" style="padding-top: 20px; font-size:15px;" *ngIf="testKits.length == 0">No test kit recorded yet.</p>
+    </div>
+
+  

@@ -1,0 +1,28 @@
+<h1 [ngStyle]="{'font-size':'30px','text-align':'center'}">Register Test Centre</h1>
+<mat-divider></mat-divider>
+<br>
+<div class="mat-card-cvr">
+<mat-card class="mat-elevation-z10">
+  <form (submit)="onAddTestCentre(testCentreForm)" #testCentreForm="ngForm">
+  <mat-form-field class="mff" [ngStyle]="{'font-size':'17px','padding-bottom':'5px'}">
+    <mat-label><mat-icon>business</mat-icon>&emsp;Test Centre's Name</mat-label>
+    <input [ngStyle]="{'font-size':'20px','text-align':'center'}"
+      matInput
+      type="text"
+      name="testCentreName"
+      ngModel
+      required
+      minlength="3"
+      #testCentreName="ngModel"
+      placeholder="e.g. Sunway Medical Centre">
+      <mat-error *ngIf="testCentreName.invalid">Name has to be at least 3 letters</mat-error>
+  </mat-form-field>
+  <button 
+    mat-raised-button 
+    color = "accent"
+    type="submit">Register</button>
+  </form>
+</mat-card>
+</div>
+
+

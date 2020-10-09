@@ -1,0 +1,100 @@
+<mat-divider></mat-divider>
+<br><br>
+<div class="mat-card-cvr">
+  <mat-card class="mat-elevation-z10">
+  <form (submit) = "onAddPost(postForm)" #postForm="ngForm">
+    <mat-form-field [ngStyle]="{'font-size':'17px','padding-bottom':'5px'}">
+      <mat-label><mat-icon>person</mat-icon>&emsp;Username</mat-label>
+      <input
+      matInput
+      type="text"
+      name="username"
+      ngModel
+      required
+      minlength="7"
+      #username="ngModel">
+      <mat-error *ngIf= "username.invalid"> Please enter a username for patient</mat-error>
+    </mat-form-field>
+
+    <mat-form-field [ngStyle]="{'font-size':'17px','padding-bottom':'5px'}">
+      <mat-label><mat-icon>lock</mat-icon>&emsp;Password</mat-label>
+      <input
+      matInput
+      [type]="hide ? 'password' : 'text'" 
+      name="password"
+      ngModel
+      placeholder=" Min 8 characters"
+      required
+      minlength="8"
+      #password="ngModel">
+      <button mat-icon-button style="font-size: 20px;" matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      <mat-error *ngIf= "password.invalid"> Please create a password for patient.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field [ngStyle]="{'font-size':'17px','padding-bottom':'5px'}">
+      <mat-label><mat-icon>account_box</mat-icon>&emsp;First name</mat-label>
+    <input
+    matInput
+    type="text"
+    name="firstName"
+    ngModel
+    required
+    minlength="2"
+    #firstName="ngModel">
+    <mat-error *ngIf= "firstName.invalid"> Please enter patient's first name</mat-error>
+  </mat-form-field>
+
+  <mat-form-field [ngStyle]="{'font-size':'17px','padding-bottom':'5px'}">
+    <mat-label><mat-icon>account_box</mat-icon>&emsp;Last name</mat-label>
+    <input
+    matInput
+    type ="text"
+    name  = "lastName"
+    ngModel
+    required
+    minlength="2"
+    #lastName="ngModel">
+    <mat-error *ngIf= "lastName.invalid">Please enter patient's last name</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" [ngStyle]="{'font-size':'17px','padding-bottom':'5px'}">
+    <mat-label><mat-icon>face</mat-icon>&emsp;Patient Type</mat-label>
+    <mat-select
+    type = "select" 
+    name  = "patientType"
+    ngModel
+    required
+    #patientType="ngModel">
+      <mat-option *ngFor="let patientType of patientTypes" [value]="patientType.value">
+        {{patientType.viewValue}}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf= "patientType.invalid">Please at least select one</mat-error>
+  </mat-form-field>
+
+  <mat-form-field [ngStyle]="{'font-size':'17px','padding-bottom':'5px'}">
+    <mat-label><mat-icon>sick</mat-icon>&emsp;Symptoms</mat-label>
+    <textarea
+    matInput
+    rows ="2"
+    type ="text"
+    name  = "symptoms"
+    ngModel
+    placeholder="Eg: Flu, Cough, Fever, Sore Throat or None"
+    required
+    #symptoms="ngModel">
+    </textarea>
+    <mat-error *ngIf= "symptoms.invalid">Please enter patient's symptom</mat-error>
+  </mat-form-field>
+    <hr>
+
+    <button
+      mat-raised-button
+      color = "accent"
+      type="submit">Save Post</button>
+
+  </form>
+</mat-card>
+</div>
