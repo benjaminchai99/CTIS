@@ -7,9 +7,9 @@ import { SignInData } from 'src/app/model/signinData';
 })
 export class AuthenticationService {
 
-  private readonly manager = new SignInData("manager","pass123");
-  private readonly tester = new SignInData("tester","pass456");
-  private readonly patient = new SignInData("patient","pass789");
+  private readonly manager = new SignInData("a","a");
+  private readonly tester = new SignInData("b","b");
+  private readonly patient = new SignInData("c","c");
 
   isAuthenticated = false;
 
